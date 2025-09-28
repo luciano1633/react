@@ -1,12 +1,18 @@
-# Tienda de Videojuegos PlayStation
+# Videojuegos "Game On"
 
-Una aplicación web de eCommerce para comprar videojuegos de PlayStation, desarrollada con React y Vite.
+Una aplicación web de eCommerce para comprar videojuegos de PlayStation, desarrollada con React y Vite. Incluye listado de productos, carrito de compras funcional y sección de noticias.
+
+## 🌐 Enlace en Vivo
+
+[Ver aplicación desplegada](https://luciano1633.github.io/react/)
 
 ## Funcionalidades
 
-- **Listado de Productos**: Muestra juegos de PS con nombre, precio normal, precio oferta, descripción e imagen.
+- **Listado de Productos**: Muestra juegos de PS con nombre, precio normal, precio oferta, descripción e imagen completa.
 - **Carrito de Compras**: Permite agregar y eliminar productos, muestra contador total y precio total.
-- **Interfaz Responsiva**: Diseño moderno y adaptable a diferentes dispositivos.
+- **Sección de Noticias**: Artículos sobre PlayStation con imágenes y fechas.
+- **Interfaz Responsiva**: Diseño moderno con bordes redondeados, adaptable a dispositivos móviles y desktop.
+- **Colores Personalizados**: Títulos en blanco sobre fondos oscuros para mejor contraste.
 
 ## Tecnologías Utilizadas
 
@@ -14,13 +20,14 @@ Una aplicación web de eCommerce para comprar videojuegos de PlayStation, desarr
 - Vite
 - JavaScript ES6+
 - CSS3
+- GitHub Pages para despliegue
 
 ## Instalación y Uso
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/videosjuegos.git
-   cd videosjuegos
+   git clone https://github.com/luciano1633/react.git
+   cd react
    ```
 
 2. Instala las dependencias:
@@ -56,20 +63,27 @@ Una aplicación web de eCommerce para comprar videojuegos de PlayStation, desarr
 ```
 src/
 ├── assets/
-│   └── images/          # Imágenes de los productos
-├── App.jsx              # Componente principal
-├── App.css              # Estilos globales
-├── ProductList.jsx      # Componente de listado de productos
-├── ProductList.css      # Estilos del listado
-├── Cart.jsx             # Componente del carrito
-├── Cart.css             # Estilos del carrito
-├── products.js          # Datos de los productos
-└── main.jsx             # Punto de entrada
+│   └── images/
+│       ├── games/          # Imágenes de productos
+│       └── news/           # Imágenes de noticias
+├── components/             # (Opcional, componentes separados)
+├── App.jsx                 # Componente principal
+├── App.css                 # Estilos globales
+├── ProductList.jsx         # Componente de listado de productos
+├── ProductList.css         # Estilos del listado
+├── Cart.jsx                # Componente del carrito
+├── Cart.css                # Estilos del carrito
+├── News.jsx                # Componente de noticias
+├── News.css                # Estilos de noticias
+├── products.js             # Datos de los productos
+├── newsData.js             # Datos de las noticias
+└── main.jsx                # Punto de entrada
 ```
 
 ## Imágenes
 
-Coloca las imágenes de los productos en `src/assets/images/` con los nombres especificados en `products.js`.
+- **Productos**: Coloca las imágenes en `src/assets/images/games/` y actualiza `products.js` con imports.
+- **Noticias**: Coloca las imágenes en `src/assets/images/news/` y actualiza `newsData.js` con imports.
 
 ## Contribución
 
@@ -82,9 +96,3 @@ Coloca las imágenes de los productos en `src/assets/images/` con los nombres es
 ## Licencia
 
 Este proyecto está bajo la Licencia MIT.
-
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
