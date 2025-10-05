@@ -3,6 +3,7 @@ import ProductList from './ProductList'
 import Cart from './Cart'
 import News from './News'
 import Footer from './Footer'
+import Navbar from './Navbar'
 import { products as initialProducts } from '../products'
 import { news as initialNews } from '../newsData'
 import './App.css'
@@ -11,6 +12,7 @@ function App() {
   const [cart, setCart] = useState([])
   const [products, setProducts] = useState([])
   const [news, setNews] = useState([])
+  const [activeSection, setActiveSection] = useState('products') // Estado para navegación
 
   // useEffect para simular carga de datos desde fuente externa
   useEffect(() => {
@@ -67,21 +69,28 @@ function App() {
 
   return (
     <div className="app">
+      <Navbar activeSection={activeSection} onSectionChange={setActiveSection} />
       <header className="app-header">
-        <h1>Videojuegos "Game On"</h1>
-        <div className="cart-summary">
-          <span>Carrito: {totalItems} productos - Total: ${totalPrice.toLocaleString()}</span>
-        </div>
+        {activeSection === 'products' && (
+          <div className="cart-summary">
+            <span>Carrito: {totalItems} productos - Total: ${totalPrice.toLocaleString()}</span>
+          </div>
+        )}
       </header>
       <main>
-        <ProductList products={products} cart={cart} onAddToCart={addToCart} />
-        <Cart
-          cart={cart}
-          onRemoveFromCart={removeFromCart}
-          totalItems={totalItems}
-          totalPrice={totalPrice}
-        />
-        <News news={news} />
+        {activeSection === 'products' ? (
+          <>
+            <ProductList products={products} cart={cart} onAddToCart={addToCart} />
+            <Cart
+              cart={cart}
+              onRemoveFromCart={removeFromCart}
+              totalItems={totalItems}
+              totalPrice={totalPrice}
+            />
+          </>
+        ) : (
+          <News news={news} />
+        )}
       </main>
       <footer className="app-footer">
         <p>© 2025 Videojuegos. Todos los derechos reservados.</p>

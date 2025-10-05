@@ -82,3 +82,12 @@
 .add-to-cart-btn:hover {
   background-color: #2980b9;
 }
+
+.add-to-cart-btn.in-cart {
+  background-color: #27ae60;
+  cursor: not-allowed;
+}
+
+.add-to-cart-btn.in-cart:hover {
+  background-color: #229954;
+}

@@ -20,7 +20,7 @@ const ProductList = ({ products, cart, onAddToCart }) => {
               )}
             </div>
             <button
-              className="add-to-cart-btn"
+              className={`add-to-cart-btn ${cart.some(item => item.id === product.id) ? 'in-cart' : ''}`}
               onClick={() => onAddToCart(product)}
               disabled={cart.some(item => item.id === product.id)}
             >
