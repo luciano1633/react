@@ -1,21 +1,29 @@
 // products.js - Datos de productos para la tienda de videojuegos PlayStation
 
+// Importar imágenes
+import godOfWarImg from './assets/images/God_Of_War.jpg';
+import spidermanImg from './assets/images/Spiderman.jpg';
+import tlou2Img from './assets/images/The Last of us 2.jpg';
+import horizonImg from './assets/images/Horizon.jpg';
+import spiderman2Img from './assets/images/Spiderman2.jpg';
+import unchartedImg from './assets/images/Uncharted.jpg';
+
 export const products = [
   {
     id: 1,
-    name: "God of War Ragnarök",
+    name: "God of War",
     normalPrice: 59990,
     offerPrice: 49990,
-    description: "Únete a Kratos y Atreus en una épica aventura nórdica llena de acción y mitología.",
-    image: "/src/assets/images/god-of-war-ragnarok.jpg"
+    description: "Únete a Kratos en una épica aventura llena de acción y mitología nórdica.",
+    image: godOfWarImg
   },
   {
     id: 2,
-    name: "Spider-Man 2",
+    name: "Spider-Man",
     normalPrice: 69990,
     offerPrice: 59990,
-    description: "Experimenta la nueva aventura de Peter Parker y Miles Morales como Spider-Man.",
-    image: "/src/assets/images/spiderman-2.jpg"
+    description: "Experimenta la aventura de Peter Parker como el superhéroe arácnido.",
+    image: spidermanImg
   },
   {
     id: 3,
@@ -23,7 +31,7 @@ export const products = [
     normalPrice: 49990,
     offerPrice: 39990,
     description: "Una historia emocional y profunda en un mundo post-apocalíptico.",
-    image: "/src/assets/images/tlou2.jpg"
+    image: tlou2Img
   },
   {
     id: 4,
@@ -31,25 +39,23 @@ export const products = [
     normalPrice: 64990,
     offerPrice: 54990,
     description: "Explora un mundo abierto futurista como Aloy en esta secuela épica.",
-    image: "/src/assets/images/horizon-forbidden-west.jpg"
+    image: horizonImg
   },
   {
     id: 5,
-    name: "Gran Turismo 7",
-    normalPrice: 59990,
-    offerPrice: 49990,
-    description: "La experiencia definitiva de simulación de carreras con gráficos impresionantes.",
-    image: "/src/assets/images/gran-turismo-7.jpg"
+    name: "Spider-Man 2",
+    normalPrice: 69990,
+    offerPrice: 59990,
+    description: "La nueva aventura de Peter Parker y Miles Morales como Spider-Man.",
+    image: spiderman2Img
   },
   {
     id: 6,
-    name: "Ratchet & Clank: Rift Apart",
+    name: "Uncharted",
     normalPrice: 54990,
     offerPrice: 44990,
-    description: "Aventura interdimensional con acción frenética y humor característico.",
-    image: "/src/assets/images/ratchet-clank-rift-apart.jpg"
+    description: "Aventura de acción con Nathan Drake en busca de tesoros legendarios.",
+    image: unchartedImg
   }
 ];
 
-// Nota: Las imágenes deben colocarse en src/assets/images/ con los nombres correspondientes.
-// Puedes descargar imágenes de juegos de PS o usar placeholders.
