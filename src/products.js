@@ -1,61 +1,60 @@
-// products.js - Datos de productos para la tienda de videojuegos PlayStation
 
-// Importar imágenes
-import godOfWarImg from './assets/images/God_Of_War.jpg';
-import spidermanImg from './assets/images/Spiderman.jpg';
-import tlou2Img from './assets/images/The Last of us 2.jpg';
-import horizonImg from './assets/images/Horizon.jpg';
-import spiderman2Img from './assets/images/Spiderman2.jpg';
-import unchartedImg from './assets/images/Uncharted.jpg';
+// products.js - Datos de productos para la tienda de videojuegos PlayStation
 
 export const products = [
   {
     id: 1,
     name: "God of War",
+    category: "Acción, Aventura",
     normalPrice: 59990,
     offerPrice: 49990,
     description: "Únete a Kratos en una épica aventura llena de acción y mitología nórdica.",
-    image: godOfWarImg
+    image: "/react/assets/images/God_Of_War.jpg"
   },
   {
     id: 2,
     name: "Spider-Man",
+    category: "Acción, Mundo Abierto",
     normalPrice: 69990,
     offerPrice: 59990,
     description: "Experimenta la aventura de Peter Parker como el superhéroe arácnido.",
-    image: spidermanImg
+    image: "/react/assets/images/Spiderman.jpg"
   },
   {
     id: 3,
     name: "The Last of Us Part II",
+    category: "Acción, Aventura, Drama",
     normalPrice: 49990,
     offerPrice: 39990,
     description: "Una historia emocional y profunda en un mundo post-apocalíptico.",
-    image: tlou2Img
+    image: "/react/assets/images/The Last of us 2.jpg"
   },
   {
     id: 4,
     name: "Horizon Forbidden West",
+    category: "Aventura, Mundo Abierto, RPG",
     normalPrice: 64990,
     offerPrice: 54990,
     description: "Explora un mundo abierto futurista como Aloy en esta secuela épica.",
-    image: horizonImg
+    image: "/react/assets/images/Horizon.jpg"
   },
   {
     id: 5,
     name: "Spider-Man 2",
+    category: "Acción, Mundo Abierto",
     normalPrice: 69990,
     offerPrice: 59990,
     description: "La nueva aventura de Peter Parker y Miles Morales como Spider-Man.",
-    image: spiderman2Img
+    image: "/react/assets/images/Spiderman2.jpg"
   },
   {
     id: 6,
     name: "Uncharted",
+    category: "Acción, Aventura",
     normalPrice: 54990,
     offerPrice: 44990,
     description: "Aventura de acción con Nathan Drake en busca de tesoros legendarios.",
-    image: unchartedImg
+    image: "/react/assets/images/Uncharted.jpg"
   }
 ];
 

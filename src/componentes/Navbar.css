@@ -10,10 +10,40 @@
   margin-bottom: 20px;
 }
 
-.navbar-brand h1 {
+ .navbar-brand h1 {
   color: white;
   margin: 0;
   font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .navbar-brand h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 0.8rem 1.5rem;
+  }
+  .navbar-brand h1 {
+    font-size: 1.4rem;
+  }
+  .nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  .navbar-brand h1 {
+    font-size: 1.5rem;
+  }
 }
 
 .navbar-links {

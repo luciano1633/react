@@ -1,0 +1,121 @@
+
+.contact-section {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #222c36;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    max-width: 100%;
+    margin: 20px 8px;
+    padding: 20px;
+  }
+  .contact-form .btn {
+    font-size: 1em;
+    padding: 9px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-section {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+  }
+  .contact-form .btn {
+    font-size: 1.05em;
+    padding: 9.5px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .contact-section {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+  }
+  .contact-form .btn {
+    font-size: 1.1em;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-section {
+    max-width: 100%;
+    margin: 16px 4px;
+    padding: 12px;
+  }
+  .contact-form .btn {
+    font-size: 1em;
+    padding: 8px;
+  }
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00bcd4;
+  letter-spacing: 1px;
+}
+.contact-form .form-group {
+  margin-bottom: 18px;
+}
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #f5f5f5;
+  letter-spacing: 0.5px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #00bcd4;
+  border-radius: 6px;
+  font-size: 1em;
+  background: #263245;
+  color: #e0e0e0;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00e676;
+  outline: none;
+}
+.contact-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+.contact-form .error {
+  color: #ff5252;
+  font-size: 0.95em;
+  margin-top: 4px;
+  display: block;
+}
+.contact-form .success {
+  color: #00e676;
+  font-size: 1em;
+  margin-top: 12px;
+  text-align: center;
+}
+.contact-form .btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1em;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #00bcd4 0%, #388e3c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+ .contact-form .btn:hover {
+  background: linear-gradient(90deg, #388e3c 0%, #00bcd4 100%);
+}

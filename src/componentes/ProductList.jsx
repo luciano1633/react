@@ -3,12 +3,39 @@
 import React from 'react';
 import './ProductList.css'; // Estilos para el componente
 
-const ProductList = ({ products, cart, onAddToCart }) => {
+const getCategories = (products) => {
+  const cats = new Set();
+  products.forEach(p => {
+    if (p.category) {
+      p.category.split(',').forEach(cat => cats.add(cat.trim()));
+    }
+  });
+  return Array.from(cats);
+};
+
+const ProductList = ({ products, cart, onAddToCart, selectedCategory, setSelectedCategory }) => {
+  const categories = ['Todas', ...getCategories(products)];
+  const filteredProducts = selectedCategory === 'Todas'
+    ? products
+    : products.filter(p => p.category && p.category.includes(selectedCategory));
+
   return (
     <div className="product-list">
       <h2>Tienda de Videojuegos PlayStation</h2>
+      <div className="category-filter">
+        <span>Filtrar por categoría:</span>
+        {categories.map(cat => (
+          <button
+            key={cat}
+            className={`filter-btn${selectedCategory === cat ? ' active' : ''}`}
+            onClick={() => setSelectedCategory(cat)}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
       <div className="products-grid">
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <div key={product.id} className="product-card">
             <img src={product.image} alt={product.name} className="product-image" />
             <h3 className="product-name">{product.name}</h3>
@@ -24,7 +51,6 @@ const ProductList = ({ products, cart, onAddToCart }) => {
               onClick={() => onAddToCart(product)}
               disabled={cart.some(item => item.id === product.id)}
             >
-              {/* Renderizado condicional: cambiar texto del botón según si el producto está en el carrito */}
               {cart.some(item => item.id === product.id) ? 'En el Carrito' : 'Agregar al Carrito'}
             </button>
           </div>

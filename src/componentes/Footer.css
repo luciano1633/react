@@ -1,6 +1,6 @@
 /* Footer.css - Estilos para el pie de página */
 
-.footer {
+ .footer {
   background-color: #2c3e50;
   color: #ecf0f1;
   padding: 20px 0;
@@ -9,13 +9,6 @@
   border-top: 2px solid #3498db;
 }
 
-.footer-content p {
-  margin: 0;
-  font-size: 0.9em;
-  font-weight: 300;
-}
-
-/* Responsive design */
 @media (max-width: 768px) {
   .footer {
     padding: 15px 0;
@@ -23,5 +16,33 @@
 
   .footer-content p {
     font-size: 0.8em;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer {
+    padding: 18px 0;
+  }
+
+  .footer-content p {
+    font-size: 0.85em;
+  }
+}
+
+@media (min-width: 1025px) {
+  .footer {
+    padding: 20px 0;
+  }
+
+  .footer-content p {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content p {
+    text-align: center;
+    width: 100%;
+    font-size: 0.85em;
   }
 }

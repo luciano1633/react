@@ -1,6 +1,6 @@
 # Videojuegos "Game On" 🕹️
 
-Una aplicación web completa de eCommerce para comprar videojuegos de PlayStation, desarrollada con React. Incluye navegación intuitiva, carrito de compras funcional, sección de noticias y múltiples mejoras de experiencia de usuario.
+Aplicación web de eCommerce para comprar videojuegos de PlayStation, desarrollada con React y Vite. Incluye navegación intuitiva, carrito de compras funcional, sección de noticias, filtro por categoría, formulario de contacto y mejoras visuales.
 
 ## 🌐 Enlace en Vivo
 
@@ -9,14 +9,18 @@ Una aplicación web completa de eCommerce para comprar videojuegos de PlayStatio
 ## ✨ Funcionalidades Principales
 
 ### 🛒 **ECommerce Completo**
-- **Listado Dinámico de Productos**: Juegos de PS con nombre, precios (normal y oferta), descripción e imágenes
+- **Listado Dinámico de Productos**: Juegos de PS con nombre, precios (normal y oferta), descripción, imágenes y categoría
+- **Filtro por Categoría**: Filtra productos por género desde botones interactivos
 - **Carrito de Compras Interactivo**: Agregar/eliminar productos con contador total y precio acumulado
 - **Estados Visuales del Carrito**: Indicadores visuales (color verde + texto) cuando productos están agregados
 - **Resumen del Carrito**: Muestra cantidad de productos y total en tiempo real
 
 ### 📰 **Sección de Noticias**
-- **Artículos de PlayStation**: Contenido actualizado con imágenes y fechas
+- **Artículos de PlayStation**: Contenido actualizado con imágenes y fechas (imágenes desde carpeta public)
 - **Navegación Independiente**: Sección dedicada sin elementos del carrito
+### 📬 **Formulario de Contacto**
+- **Validación de Campos**: Nombre, correo y mensaje con feedback visual
+- **Diseño Moderno**: Estilos personalizados y responsivos
 
 ### 🧭 **Navegación Inteligente**
 - **Barra de Navegación**: Navegación fluida entre Productos y Noticias
@@ -39,8 +43,8 @@ Una aplicación web completa de eCommerce para comprar videojuegos de PlayStatio
 - **GitHub Pages**: Despliegue automático
 
 ### **Hooks y Estados Implementados**
-- **`useState`**: Gestión de estados para carrito, productos, noticias y navegación
-- **`useEffect`**: Carga asíncrona de datos simulando APIs externas
+- **`useState`**: Gestión de estados para carrito, productos, noticias, filtro de categoría y navegación
+- **`useEffect`**: Carga asíncrona de productos desde `public/products.json` usando fetch
 - **Estados Compuestos**: Manejo de objetos complejos en el carrito
 
 ### **Patrones de React**
@@ -96,13 +100,25 @@ src/
 │   └── images/
 │       ├── games/        # Imágenes de videojuegos
 │       └── news/         # Imágenes de artículos
-├── products.js           # Datos de productos
+├── products.js           # (Obsoleto) Datos de productos, ahora se usa products.json
+├── newsData.js           # Datos de noticias (imágenes por ruta pública)
+├── products.json         # Datos de productos (usado con fetch)
 ├── newsData.js           # Datos de noticias
 ├── index.css             # Estilos globales
 └── main.jsx              # Punto de entrada
 ```
 
-## 🎨 Características de Diseño
+## 🎨 Características de Diseño y Buenas Prácticas
+### **Criterios y Consideraciones del Profesor**
+- Estructura modular y carpetas organizadas
+- Uso correcto de HTML, CSS y Bootstrap 5
+- Componentes Bootstrap integrados con React
+- Renderizado condicional y dinámico
+- Datos externos cargados con fetch y useEffect
+- Imágenes servidas desde carpeta public
+- No se versiona node_modules
+- Rama gh-pages para despliegue
+- Documentación clara en README.md
 
 ### **Paleta de Colores**
 - **Fondo Principal**: `#242424` (gris oscuro)
@@ -184,14 +200,19 @@ npm run deploy   # Desplegar a GitHub Pages
 - ✅ **Nombres Claros**: Variables y funciones autoexplicativas
 - ✅ **Estructura Lógica**: Carpetas organizadas por funcionalidad
 - ✅ **Sin Duplicación**: Código DRY (Don't Repeat Yourself)
+- ✅ **Imágenes por ruta pública**: Compatible con Vite y despliegue
+- ✅ **Datos externos con fetch**: products.json y newsData.js
 
 ## 📊 Estado del Proyecto
 
 ### ✅ **Funcionalidades Completadas**
-- [x] Listado dinámico de productos con useEffect
+- [x] Listado dinámico de productos con useEffect y fetch
+- [x] Filtro por categoría de videojuegos
 - [x] Carrito de compras con useState
 - [x] Renderizado condicional (carrito vacío, botones)
 - [x] Navegación entre secciones
+- [x] Sección de noticias con imágenes públicas
+- [x] Formulario de contacto validado
 - [x] Estados visuales mejorados
 - [x] Diseño responsivo
 - [x] Despliegue en GitHub Pages
@@ -207,6 +228,3 @@ npm run deploy   # Desplegar a GitHub Pages
 
 Este proyecto está bajo la **Licencia MIT**. Eres libre de usarlo, modificarlo y distribuirlo.
 
----
-
-**Desarrollado con ❤️ usando React**

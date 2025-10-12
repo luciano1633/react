@@ -54,3 +54,29 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Ajustes para tablets */
+  h1 {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* Ajustes para PCs */
+  h1 {
+    font-size: 3.2em;
+  }
+}

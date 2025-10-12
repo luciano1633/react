@@ -1,33 +1,48 @@
 import { useState, useEffect } from 'react'
-import ProductList from './ProductList'
-import Cart from './Cart'
-import News from './News'
-import Footer from './Footer'
-import Navbar from './Navbar'
-import { products as initialProducts } from '../products'
-import { news as initialNews } from '../newsData'
-import './App.css'
+import ProductList from './componentes/ProductList'
+import Cart from './componentes/Cart'
+import Footer from './componentes/Footer'
+import Navbar from './componentes/Navbar'
+import ContactForm from './componentes/ContactForm'
+import News from './componentes/News'
+import { news as initialNews } from './newsData'
+// import { products as initialProducts } from './products'
+import './componentes/App.css'
 
 function App() {
   const [cart, setCart] = useState([])
   const [products, setProducts] = useState([])
-  const [news, setNews] = useState([])
   const [activeSection, setActiveSection] = useState('products') // Estado para navegación
+  const [news] = useState(initialNews)
+  const [selectedCategory, setSelectedCategory] = useState('Todas')
 
-  // useEffect para simular carga de datos desde fuente externa
+  // useEffect para cargar productos usando Fetch API y cleanup
   useEffect(() => {
-    // Simular carga asíncrona de productos y noticias
-    const loadData = async () => {
-      // Simular delay de carga para demostrar useEffect
-      await new Promise(resolve => setTimeout(resolve, 500))
-      
-      // Cargar datos desde archivos locales (simulando API externa)
-      setProducts(initialProducts)
-      setNews(initialNews)
-    }
-    
-    loadData()
-  }, []) // Array vacío significa que se ejecuta solo una vez al montar el componente
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('/react/products.json', { signal });
+        if (!response.ok) throw new Error('Error al cargar productos');
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        if (error.name !== 'AbortError') {
+          console.error('Error al obtener productos:', error);
+        }
+      }
+    };
+
+    fetchProducts();
+
+    // Cleanup para abortar fetch si el componente se desmonta
+    return () => {
+      controller.abort();
+    };
+  }, []);
+
+
 
   // Función para agregar producto al carrito
   // Si el producto ya existe, incrementa la cantidad; si no, lo agrega con cantidad 1
@@ -71,16 +86,20 @@ function App() {
     <div className="app">
       <Navbar activeSection={activeSection} onSectionChange={setActiveSection} />
       <header className="app-header">
-        {activeSection === 'products' && (
-          <div className="cart-summary">
-            <span>Carrito: {totalItems} productos - Total: ${totalPrice.toLocaleString()}</span>
-          </div>
-        )}
+        <div className="cart-summary">
+          <span>Carrito: {totalItems} productos - Total: ${totalPrice.toLocaleString()}</span>
+        </div>
       </header>
       <main>
         {activeSection === 'products' ? (
           <>
-            <ProductList products={products} cart={cart} onAddToCart={addToCart} />
+            <ProductList
+              products={products}
+              cart={cart}
+              onAddToCart={addToCart}
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+            />
             <Cart
               cart={cart}
               onRemoveFromCart={removeFromCart}
@@ -88,13 +107,13 @@ function App() {
               totalPrice={totalPrice}
             />
           </>
-        ) : (
+        ) : activeSection === 'news' ? (
           <News news={news} />
+        ) : (
+          <ContactForm />
         )}
       </main>
-      <footer className="app-footer">
-        <p>© 2025 Videojuegos. Todos los derechos reservados.</p>
-      </footer>
+      <Footer />
     </div>
   )
 }

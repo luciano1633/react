@@ -1,3 +1,38 @@
+.category-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  background: #222c36;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.category-filter span {
+  color: #00bcd4;
+  font-weight: 600;
+  margin-right: 10px;
+}
+.filter-btn {
+  background: linear-gradient(90deg, #00bcd4 0%, #388e3c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.filter-btn.active {
+  background: linear-gradient(90deg, #388e3c 0%, #00bcd4 100%);
+  transform: scale(1.08);
+}
+.filter-btn:hover {
+  background: linear-gradient(90deg, #388e3c 0%, #00bcd4 100%);
+  transform: scale(1.05);
+}
 /* ProductList.css - Estilos para el listado de productos */
 
 .product-list {
@@ -17,6 +52,54 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
 }
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .product-card {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+  .product-card {
+    padding: 12px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .product-card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .product-list {
+    padding: 8px;
+  }
+  .product-card {
+    padding: 8px;
+    margin: 0;
+  }
+  .product-image {
+    height: 140px;
+  }
+}
+
 
 .product-card {
   border: 1px solid #ddd;
@@ -88,6 +171,6 @@
   cursor: not-allowed;
 }
 
-.add-to-cart-btn.in-cart:hover {
+ .add-to-cart-btn.in-cart:hover {
   background-color: #229954;
 }

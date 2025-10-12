@@ -22,6 +22,12 @@ const Navbar = ({ activeSection, onSectionChange }) => {
         >
           Noticias
         </button>
+        <button
+          className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
+          onClick={() => onSectionChange('contact')}
+        >
+          Contacto
+        </button>
       </div>
     </nav>
   );
