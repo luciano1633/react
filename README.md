@@ -1,10 +1,21 @@
 # Videojuegos "Game On" 🕹️
 
-Aplicación web de eCommerce para comprar videojuegos de PlayStation, desarrollada con React y Vite. Incluye navegación intuitiva, carrito de compras funcional, sección de noticias, filtro por categoría, formulario de contacto y mejoras visuales.
+Aplicación web de eCommerce moderna para comprar videojuegos de PlayStation, desarrollada con **React 19** y **Vite 7**. Incluye navegación intuitiva, carrito de compras funcional, sección de noticias, filtro por categoría, formulario de contacto validado, integración con Bootstrap y mejoras visuales avanzadas.
 
 ## 🌐 Enlace en Vivo
 
 [Ver aplicación desplegada en GitHub Pages](https://luciano1633.github.io/react/)
+
+## 🚀 **Últimas Actualizaciones** ⭐
+
+### **Versión 2.0 - Diciembre 2024**
+- **🔄 React 19.1.1**: Actualización a la última versión con mejoras de rendimiento
+- **🎨 Bootstrap 5.3.8**: Integración completa de Bootstrap + React Bootstrap
+- **📋 Formulario de Contacto**: Componente completamente funcional con validación
+- **🛠️ ESLint 9**: Configuración moderna con reglas actualizadas
+- **🔧 Vite 7**: Build tool actualizado para mejor rendimiento
+- **🧹 Cleanup Automático**: AbortController para cancelar fetch al desmontar componentes
+- **✨ UX Mejorada**: Feedback visual inmediato en todas las interacciones
 
 ## ✨ Funcionalidades Principales
 
@@ -19,8 +30,10 @@ Aplicación web de eCommerce para comprar videojuegos de PlayStation, desarrolla
 - **Artículos de PlayStation**: Contenido actualizado con imágenes y fechas (imágenes desde carpeta public)
 - **Navegación Independiente**: Sección dedicada sin elementos del carrito
 ### 📬 **Formulario de Contacto**
-- **Validación de Campos**: Nombre, correo y mensaje con feedback visual
-- **Diseño Moderno**: Estilos personalizados y responsivos
+- **Validación Avanzada**: Validación en tiempo real de nombre, correo y mensaje
+- **Feedback Visual Inmediato**: Mensajes de error y éxito instantáneos
+- **Limpieza Automática**: Reseteo del formulario tras envío exitoso
+- **Diseño Moderno**: Estilos personalizados con Bootstrap y responsivos
 
 ### 🧭 **Navegación Inteligente**
 - **Barra de Navegación**: Navegación fluida entre Productos y Noticias
@@ -36,16 +49,19 @@ Aplicación web de eCommerce para comprar videojuegos de PlayStation, desarrolla
 ## 🛠️ Tecnologías y Conceptos de React
 
 ### **Tecnologías Utilizadas**
-- **React 19**: Framework principal con hooks modernos
-- **Vite**: Build tool rápido para desarrollo
+- **React 19.1.1**: Framework principal con hooks modernos y últimas características
+- **Vite 7.1.7**: Build tool ultrarrápido para desarrollo y producción
+- **Bootstrap 5.3.8**: Framework CSS para diseño responsivo y componentes
+- **React Bootstrap 2.10.10**: Componentes React optimizados para Bootstrap
 - **JavaScript ES6+**: Funciones modernas y sintaxis actual
-- **CSS3**: Estilos personalizados sin frameworks externos
-- **GitHub Pages**: Despliegue automático
+- **ESLint 9.36**: Linting avanzado con configuración moderna
+- **GitHub Pages**: Despliegue automático con gh-pages 6.3.0
 
 ### **Hooks y Estados Implementados**
-- **`useState`**: Gestión de estados para carrito, productos, noticias, filtro de categoría y navegación
-- **`useEffect`**: Carga asíncrona de productos desde `public/products.json` usando fetch
-- **Estados Compuestos**: Manejo de objetos complejos en el carrito
+- **`useState`**: Gestión múltiple de estados (carrito, productos, noticias, filtro, navegación, formulario)
+- **`useEffect`**: Carga asíncrona con fetch API y cleanup automático (AbortController)
+- **Estados Compuestos**: Manejo de objetos complejos en carrito y formularios
+- **Validación en Tiempo Real**: Estados para errores y éxito en formularios
 
 ### **Patrones de React**
 - **Renderizado Condicional**: Mensajes de carrito vacío, estados de botones
@@ -89,36 +105,37 @@ src/
 │   ├── App.css           # Estilos principales
 │   ├── Navbar.jsx        # Barra de navegación
 │   ├── Navbar.css        # Estilos de navegación
-│   ├── ProductList.jsx   # Listado de productos
+│   ├── ProductList.jsx   # Listado de productos con filtros
 │   ├── ProductList.css   # Estilos de productos
-│   ├── Cart.jsx          # Carrito de compras
+│   ├── Cart.jsx          # Carrito de compras interactivo
 │   ├── Cart.css          # Estilos del carrito
 │   ├── News.jsx          # Sección de noticias
 │   ├── News.css          # Estilos de noticias
+│   ├── ContactForm.jsx   # Formulario de contacto validado ⭐ NUEVO
+│   ├── ContactForm.css   # Estilos del formulario ⭐ NUEVO
 │   └── Footer.jsx        # Pie de página
-├── assets/
-│   └── images/
-│       ├── games/        # Imágenes de videojuegos
-│       └── news/         # Imágenes de artículos
-├── products.js           # (Obsoleto) Datos de productos, ahora se usa products.json
-├── newsData.js           # Datos de noticias (imágenes por ruta pública)
-├── products.json         # Datos de productos (usado con fetch)
-├── newsData.js           # Datos de noticias
+├── products.js           # (Obsoleto) Datos de productos
+├── newsData.js           # Datos de noticias con rutas públicas
 ├── index.css             # Estilos globales
 └── main.jsx              # Punto de entrada
+public/
+├── products.json         # Datos de productos (cargados con fetch) ⭐ ACTUALIZADO
+└── assets/
+    └── images/           # Imágenes públicas optimizadas
 ```
 
 ## 🎨 Características de Diseño y Buenas Prácticas
 ### **Criterios y Consideraciones del Profesor**
-- Estructura modular y carpetas organizadas
-- Uso correcto de HTML, CSS y Bootstrap 5
-- Componentes Bootstrap integrados con React
-- Renderizado condicional y dinámico
-- Datos externos cargados con fetch y useEffect
-- Imágenes servidas desde carpeta public
-- No se versiona node_modules
-- Rama gh-pages para despliegue
-- Documentación clara en README.md
+- ✅ **Estructura modular** y carpetas organizadas
+- ✅ **Bootstrap 5.3.8** integrado con React Bootstrap 2.10.10
+- ✅ **Componentes React** modernos con hooks
+- ✅ **Renderizado condicional** y dinámico avanzado
+- ✅ **Fetch API** con cleanup y manejo de errores
+- ✅ **Formularios validados** con feedback en tiempo real
+- ✅ **Imágenes públicas** optimizadas para Vite/GitHub Pages
+- ✅ **ESLint** configurado con reglas modernas
+- ✅ **GitHub Actions** para despliegue automático
+- ✅ **Documentación completa** en README.md
 
 ### **Paleta de Colores**
 - **Fondo Principal**: `#242424` (gris oscuro)
@@ -180,10 +197,29 @@ export default defineConfig({
 
 ### **Comandos Disponibles**
 ```bash
-npm run dev      # Servidor de desarrollo
+npm run dev      # Servidor de desarrollo (Vite 7)
 npm run build    # Construir para producción
+npm run lint     # Ejecutar ESLint para verificar código
 npm run preview  # Vista previa del build
-npm run deploy   # Desplegar a GitHub Pages
+npm run deploy   # Desplegar a GitHub Pages automáticamente
+```
+
+### **Dependencias Principales**
+```json
+{
+  "dependencies": {
+    "bootstrap": "^5.3.8",           // Framework CSS
+    "react": "^19.1.1",             // React principal
+    "react-bootstrap": "^2.10.10",   // Componentes Bootstrap para React
+    "react-dom": "^19.1.1"          // React DOM
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react-swc": "^4.1.0",  // Plugin Vite optimizado
+    "eslint": "^9.36.0",                   // Linter moderno
+    "gh-pages": "^6.3.0",                 // Despliegue automático
+    "vite": "^7.1.7"                      // Build tool
+  }
+}
 ```
 
 ### **Flujo de Desarrollo**
@@ -206,23 +242,30 @@ npm run deploy   # Desplegar a GitHub Pages
 ## 📊 Estado del Proyecto
 
 ### ✅ **Funcionalidades Completadas**
+- [x] **React 19** con hooks modernos y optimizaciones
+- [x] **Fetch API** con AbortController para cleanup automático
+- [x] **Bootstrap 5 + React Bootstrap** completamente integrado
+- [x] **Formulario de contacto** con validación en tiempo real
+- [x] **ESLint 9** con configuración moderna y reglas actualizadas
 - [x] Listado dinámico de productos con useEffect y fetch
 - [x] Filtro por categoría de videojuegos
-- [x] Carrito de compras con useState
-- [x] Renderizado condicional (carrito vacío, botones)
-- [x] Navegación entre secciones
+- [x] Carrito de compras con useState avanzado
+- [x] Renderizado condicional (carrito vacío, botones, formularios)
+- [x] Navegación entre secciones fluida
 - [x] Sección de noticias con imágenes públicas
-- [x] Formulario de contacto validado
-- [x] Estados visuales mejorados
-- [x] Diseño responsivo
-- [x] Despliegue en GitHub Pages
+- [x] Estados visuales mejorados con Bootstrap
+- [x] Diseño responsivo y accesible
+- [x] Despliegue automatizado en GitHub Pages
 
 ### 🎯 **Conceptos de React Aplicados**
-- [x] **useState**: Gestión de múltiples estados
-- [x] **useEffect**: Carga de datos asíncrona
-- [x] **Props**: Comunicación entre componentes
-- [x] **Renderizado Condicional**: Lógica de UI
-- [x] **Componentes Funcionales**: Arquitectura moderna
+- [x] **useState**: Gestión compleja de múltiples estados
+- [x] **useEffect**: Carga asíncrona con cleanup y AbortController
+- [x] **Props**: Comunicación bidireccional entre componentes
+- [x] **Renderizado Condicional**: Lógica avanzada de UI
+- [x] **Componentes Funcionales**: Arquitectura moderna React 19
+- [x] **Validación de Formularios**: Estados y manejo de errores
+- [x] **Fetch API**: Peticiones HTTP modernas con manejo de errores
+- [x] **Event Handling**: Manejo avanzado de eventos de usuario
 
 ## 📄 Licencia
 
